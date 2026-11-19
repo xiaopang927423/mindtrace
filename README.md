@@ -103,6 +103,8 @@ npm run package
 
 该命令构建 TypeScript，使用 electron-builder 制作 Apple Silicon DMG，并使用无需账号的 ad-hoc 签名。安装包不上传 App Store、不提交公证，也不执行自动发布。
 
+也可在 GitHub 的「Actions → Build macOS DMG → Run workflow」填写已推送的版本标签，例如 `v0.2.0`。流程在 macOS 15 / Apple Silicon 上检查类型、运行测试、构建 DMG，再从 DMG 安装应用并运行桌面测试。通过后，将安装包及 `SHA256SUMS.txt` 上传到对应的 Release 草稿；检查发布说明后手动发布。流程不会覆盖已经公开发布的版本。
+
 ```sh
 npm run test:ui
 ```
