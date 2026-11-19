@@ -12,7 +12,7 @@
 
 本版使用 ad-hoc 本地签名，未做 Apple 公证。如果通过浏览器下载或其他方式传输后，macOS 提示无法验证开发者，可在尝试打开后进入「系统设置 → 隐私与安全性 → 仍要打开」，仅允许本应用。无需关闭系统安全保护。参见 [Apple 的官方打开说明](https://support.apple.com/en-us/102445)。
 
-当前包为 **arm64**，适用于 M 系列 Mac。已在当前 macOS 26.4 / Apple Silicon 环境验证；最低版本声明为 macOS 13，尚未在旧版系统和 Intel Mac 上实测。
+当前包为 **arm64**，适用于 M 系列 Mac。已在本地 macOS 26.4 和 GitHub Actions 的 macOS 15 / Apple Silicon 环境验证；最低版本声明为 macOS 13，尚未在 macOS 13、14 和 Intel Mac 上实测。
 
 ## 已实现
 
