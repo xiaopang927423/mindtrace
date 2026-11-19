@@ -6,7 +6,7 @@
 
 ## 安装
 
-1. 打开 `dist/v0.2.0/MindTrace-0.2.0-mac-arm64.dmg`。
+1. 从 [GitHub Release](https://github.com/xiaopang927423/mindtrace/releases/tag/v0.2.0) 下载并打开 `MindTrace-0.2.0-mac-arm64.dmg`。
 2. 将「思序」拖到「Applications / 应用程序」。
 3. 从「应用程序」打开思序。
 
