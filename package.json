@@ -1,0 +1,83 @@
+{
+  "name": "mindtrace-mac",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "思序：从需求、资料与判断，到有依据的产品决策",
+  "author": "MindTrace",
+  "main": "out/main.cjs",
+  "scripts": {
+    "build:web": "esbuild Web/app.ts --bundle --format=iife --target=chrome140 --outfile=Web/app.bundle.js",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "start": "npm run build && electron .",
+    "package": "npm run build && CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac dmg --arm64",
+    "test": "node --experimental-strip-types --test Tests/*.test.ts",
+    "test:ui": "node Tests/ui.mjs",
+    "dev": "node scripts/dev.mjs"
+  },
+  "dependencies": {
+    "pdfjs-dist": "5.4.394",
+    "linkedom": "0.18.12"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "@playwright/test": "1.56.1",
+    "electron": "45.3.4",
+    "electron-builder": "26.18.0",
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1"
+  },
+  "build": {
+    "appId": "local.mindtrace.app",
+    "productName": "思序",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "Web/index.html",
+      "Web/styles.css",
+      "Web/app.bundle.js",
+      "package.json"
+    ],
+    "mac": {
+      "icon": "assets/AppIcon.icns",
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "identity": "-",
+      "hardenedRuntime": false,
+      "notarize": false,
+      "minimumSystemVersion": "13.0"
+    },
+    "dmg": {
+      "title": "思序 MindTrace",
+      "artifactName": "MindTrace-${version}-mac-${arch}.dmg",
+      "contents": [
+        {
+          "x": 140,
+          "y": 170
+        },
+        {
+          "x": 420,
+          "y": 170,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ],
+      "window": {
+        "width": 560,
+        "height": 360
+      },
+      "sign": false
+    }
+  }
+}

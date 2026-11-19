@@ -1,0 +1,17 @@
+.build/
+dist/
+node_modules/
+test-results/
+.DS_Store
+Web/app.bundle.js
+out/
+test-results-*.png
+
+.env
+.env.*
+!.env.example
+*.log
+*.mindtrace
+workspace.json
+workspace.previous.json
+credentials.enc
